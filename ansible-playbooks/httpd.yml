@@ -1,0 +1,14 @@
+---
+- name: installing nginx on localhost
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: ensure apache at the latest version
+      yum:
+        name: httpd
+        state: latest
+    - name: ensure apache is running
+      service:
+        name: httpd
+        state: started
+
